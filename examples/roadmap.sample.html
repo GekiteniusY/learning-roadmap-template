@@ -1,0 +1,107 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Git 入門 学習ロードマップ（サンプル）</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;color:#1f2937;background:#fff;line-height:1.6}
+main{max-width:1060px;margin:0 auto;padding:24px 20px 60px}
+h1{font-size:20px;margin:0 0 10px}
+.overall{display:flex;align-items:center;gap:12px;margin:0 0 14px;font-size:13px;color:#4b5563}
+.bar{flex:1;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden}
+.bar>i{display:block;height:100%;width:0;background:#2563eb;transition:width .2s}
+#reset{border:0;background:none;color:#9ca3af;font-size:12px;cursor:pointer;padding:0}
+svg{display:block;width:100%;height:auto;margin:0 0 8px}
+.node rect:first-child{fill:#f8fafc;stroke:#cbd5e1;stroke-width:1.2}
+.node:hover rect:first-child{stroke:#2563eb}
+.node.done rect:first-child{fill:#eff6ff;stroke:#2563eb}
+.nno{font-size:11px;fill:#6b7280}.nt{font-size:15px;font-weight:700;fill:#111827}.ns{font-size:10.5px;fill:#6b7280}
+.npc{font-size:10.5px;fill:#374151;text-anchor:end}
+.pbg{fill:#e5e7eb}.pfg{fill:#2563eb}
+.edge{fill:none;stroke:#8a94a6;stroke-width:1.5}.dash{stroke-dasharray:4 3}
+.elab{font-size:10px;fill:#6b7280}
+section{margin-top:26px;scroll-margin-top:12px}
+h2{font-size:16px;margin:0 0 4px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;border-bottom:1px solid #e5e7eb;padding-bottom:4px}
+h2 .no{display:inline-block;min-width:22px;height:22px;line-height:22px;text-align:center;border-radius:11px;background:#1f2937;color:#fff;font-size:12px}
+h2 .sub{font-weight:400;font-size:13px;color:#6b7280}
+h2 .cnt{margin-left:auto;font-weight:400;font-size:13px;color:#374151}
+.rq{white-space:nowrap}.reqs{margin:4px 0 6px;font-size:12.5px;color:#4b5563}
+ul{list-style:none;margin:0;padding:0}
+li{padding:5px 0;border-bottom:1px dotted #eef0f3;font-size:14px}
+li label{cursor:pointer;display:inline}
+li input{margin:0 8px 0 0;vertical-align:-2px;width:15px;height:15px;cursor:pointer}
+li input:checked+.t{color:#9ca3af;text-decoration:line-through}
+.ref{margin-left:8px;font-size:11.5px;color:#6b7280}.ref a,.ref code{white-space:nowrap}
+.ref a{color:#2563eb;text-decoration:none}.ref a:hover{text-decoration:underline}
+.ref code{font-size:11px;background:#f3f4f6;padding:0 3px;border-radius:3px}
+a{color:#2563eb}
+footer{margin-top:30px;font-size:11.5px;color:#9ca3af}
+</style></head><body><main>
+<h1>Git 入門 学習ロードマップ（サンプル）</h1>
+<div class="overall"><span>全体</span><div class="bar"><i id="ob"></i></div><span id="oc">0/30</span><button id="reset" type="button">リセット</button></div>
+<svg viewBox="0 0 638 194" role="img" aria-label="5ステップのロードマップ"><defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8a94a6"/></marker></defs><path d="M138 97 C153 97 153 97 168 97" class="edge" marker-end="url(#ar)"/>
+<path d="M302 97 C317 97 317 47 332 47" class="edge" marker-end="url(#ar)"/>
+<path d="M302 97 C317 97 317 147 332 147" class="edge" marker-end="url(#ar)"/>
+<path d="M466 47 C481 47 481 97 496 97" class="edge" marker-end="url(#ar)"/>
+<path d="M466 147 C481 147 481 97 496 97" class="edge" marker-end="url(#ar)"/>
+<path d="M401 86 L401 104" class="edge dash" marker-end="url(#ar)"/>
+<text x="407" y="99" class="elab">履歴を共有</text>
+<a href="#s1" class="node" data-node="1"><rect x="8" y="58" width="130" height="78" rx="8"/><text x="18" y="75" class="nno">Step 1</text><text x="18" y="95" class="nt">全体像</text><text x="18" y="111" class="ns">仕組みの概要</text><rect x="18" y="121" width="78" height="5" rx="2.5" class="pbg"/><rect x="18" y="121" width="0" height="5" rx="2.5" class="pfg" data-bar="1"/><text x="128" y="126" class="npc" data-pc="1">0/0</text></a>
+<a href="#s2" class="node" data-node="2"><rect x="172" y="58" width="130" height="78" rx="8"/><text x="182" y="75" class="nno">Step 2</text><text x="182" y="95" class="nt">基本の記録</text><text x="182" y="111" class="ns">add / commit</text><rect x="182" y="121" width="78" height="5" rx="2.5" class="pbg"/><rect x="182" y="121" width="0" height="5" rx="2.5" class="pfg" data-bar="2"/><text x="292" y="126" class="npc" data-pc="2">0/0</text></a>
+<a href="#s3" class="node" data-node="3"><rect x="336" y="8" width="130" height="78" rx="8"/><text x="346" y="25" class="nno">Step 3</text><text x="346" y="45" class="nt">ブランチ</text><text x="346" y="61" class="ns">branch / merge</text><rect x="346" y="71" width="78" height="5" rx="2.5" class="pbg"/><rect x="346" y="71" width="0" height="5" rx="2.5" class="pfg" data-bar="3"/><text x="456" y="76" class="npc" data-pc="3">0/0</text></a>
+<a href="#s4" class="node" data-node="4"><rect x="336" y="108" width="130" height="78" rx="8"/><text x="346" y="125" class="nno">Step 4</text><text x="346" y="145" class="nt">リモート</text><text x="346" y="161" class="ns">remote</text><rect x="346" y="171" width="78" height="5" rx="2.5" class="pbg"/><rect x="346" y="171" width="0" height="5" rx="2.5" class="pfg" data-bar="4"/><text x="456" y="176" class="npc" data-pc="4">0/0</text></a>
+<a href="#s5" class="node" data-node="5"><rect x="500" y="58" width="130" height="78" rx="8"/><text x="510" y="75" class="nno">Step 5</text><text x="510" y="95" class="nt">チーム開発</text><text x="510" y="111" class="ns">PR / review</text><rect x="510" y="121" width="78" height="5" rx="2.5" class="pbg"/><rect x="510" y="121" width="0" height="5" rx="2.5" class="pfg" data-bar="5"/><text x="620" y="126" class="npc" data-pc="5">0/0</text></a></svg>
+<section id="s1"><h2><span class="no">1</span>全体像<span class="sub">Git で何ができるか</span><span class="cnt" data-cnt="1">0/6</span></h2><p class="reqs"><span class="rq"><a href="https://git-scm.com/book/ja/v2/使い始める-Gitの基本" target="_blank" rel="noopener">Pro Git 1章</a></span></p><ul><li><label><input type="checkbox" data-id="s1-1"><span class="t">作業ツリー・ステージ・リポジトリの3つの場所の違いを説明できる</span></label><span class="ref"><a href="https://git-scm.com/book/ja/v2/使い始める-Gitの基本" target="_blank" rel="noopener">1.3 Gitの基本</a></span></li>
+<li><label><input type="checkbox" data-id="s1-2"><span class="t">Git がスナップショットで履歴を持つことを説明できる</span></label><span class="ref"><a href="https://git-scm.com/book/ja/v2/使い始める-Gitの基本" target="_blank" rel="noopener">1.3</a></span></li>
+<li><label><input type="checkbox" data-id="s1-3"><span class="t">分散型と集中型の違いを説明できる</span></label><span class="ref"><a href="https://git-scm.com/book/ja/v2/使い始める-バージョン管理に関して" target="_blank" rel="noopener">1.1</a></span></li>
+<li><label><input type="checkbox" data-id="s1-4"><span class="t">git config で名前とメールを設定する理由を説明できる</span></label><span class="ref"><a href="https://git-scm.com/book/ja/v2/使い始める-最初のGitの構成" target="_blank" rel="noopener">1.6</a></span></li>
+<li><label><input type="checkbox" data-id="s1-5"><span class="t">ヘルプの引き方（git help）が分かる</span></label><span class="ref"><a href="https://git-scm.com/docs/git-help" target="_blank" rel="noopener">git help</a></span></li>
+<li><label><input type="checkbox" data-id="s1-6"><span class="t">このロードマップの残りのステップが何を扱うか説明できる</span></label></li></ul></section>
+<section id="s2"><h2><span class="no">2</span>基本の記録<span class="sub">add・commit・log</span><span class="cnt" data-cnt="2">0/6</span></h2><ul><li><label><input type="checkbox" data-id="s2-1"><span class="t">git status の出力の各欄を説明できる</span></label><span class="ref"><a href="https://git-scm.com/docs/git-status" target="_blank" rel="noopener">git status</a></span></li>
+<li><label><input type="checkbox" data-id="s2-2"><span class="t">add と commit をなぜ分けるのか説明できる</span></label><span class="ref"><a href="https://git-scm.com/book/ja/v2/Gitの基本-変更内容のリポジトリへの記録" target="_blank" rel="noopener">2.2</a></span></li>
+<li><label><input type="checkbox" data-id="s2-3"><span class="t">良いコミットメッセージの書き方を説明できる</span></label></li>
+<li><label><input type="checkbox" data-id="s2-4"><span class="t">git log で履歴を絞り込める（--oneline・-p）</span></label><span class="ref"><a href="https://git-scm.com/docs/git-log" target="_blank" rel="noopener">git log</a></span></li>
+<li><label><input type="checkbox" data-id="s2-5"><span class="t">.gitignore の書き方を説明できる</span></label><span class="ref"><a href="https://git-scm.com/docs/gitignore" target="_blank" rel="noopener">gitignore</a></span></li>
+<li><label><input type="checkbox" data-id="s2-6"><span class="t">直前のコミットを直す方法（--amend）と注意点を説明できる</span></label></li></ul></section>
+<section id="s3"><h2><span class="no">3</span>ブランチ<span class="sub">分岐とマージ</span><span class="cnt" data-cnt="3">0/6</span></h2><ul><li><label><input type="checkbox" data-id="s3-1"><span class="t">ブランチがコミットへのポインタであることを説明できる</span></label><span class="ref"><a href="https://git-scm.com/book/ja/v2/Git-のブランチ機能-ブランチとは" target="_blank" rel="noopener">3.1</a></span></li>
+<li><label><input type="checkbox" data-id="s3-2"><span class="t">fast-forward と 3-way マージの違いを説明できる</span></label></li>
+<li><label><input type="checkbox" data-id="s3-3"><span class="t">コンフリクトを解消する手順を説明できる</span></label></li>
+<li><label><input type="checkbox" data-id="s3-4"><span class="t">rebase と merge の使い分けを説明できる</span></label><span class="ref"><a href="https://git-scm.com/book/ja/v2/Git-のブランチ機能-リベース" target="_blank" rel="noopener">3.6</a></span></li>
+<li><label><input type="checkbox" data-id="s3-5"><span class="t">HEAD が何を指すか説明できる</span></label></li>
+<li><label><input type="checkbox" data-id="s3-6"><span class="t">switch / restore の役割を説明できる</span></label><span class="ref"><a href="https://git-scm.com/docs/git-switch" target="_blank" rel="noopener">git switch</a></span></li></ul></section>
+<section id="s4"><h2><span class="no">4</span>リモート<span class="sub">push・pull・fetch</span><span class="cnt" data-cnt="4">0/6</span></h2><ul><li><label><input type="checkbox" data-id="s4-1"><span class="t">origin とリモート追跡ブランチの関係を説明できる</span></label><span class="ref"><a href="https://git-scm.com/book/ja/v2/Git-のブランチ機能-リモートブランチ" target="_blank" rel="noopener">3.5</a></span></li>
+<li><label><input type="checkbox" data-id="s4-2"><span class="t">fetch と pull の違いを説明できる</span></label></li>
+<li><label><input type="checkbox" data-id="s4-3"><span class="t">push が拒否される理由と対処を説明できる</span></label></li>
+<li><label><input type="checkbox" data-id="s4-4"><span class="t">force push の危険と --force-with-lease を説明できる</span></label><span class="ref"><a href="https://git-scm.com/docs/git-push" target="_blank" rel="noopener">git push</a></span></li>
+<li><label><input type="checkbox" data-id="s4-5"><span class="t">clone で何がコピーされるか説明できる</span></label></li>
+<li><label><input type="checkbox" data-id="s4-6"><span class="t">上流ブランチ（upstream）の設定方法が分かる</span></label></li></ul></section>
+<section id="s5"><h2><span class="no">5</span>チーム開発<span class="sub">Pull Request の流れ</span><span class="cnt" data-cnt="5">0/6</span></h2><ul><li><label><input type="checkbox" data-id="s5-1"><span class="t">ブランチを切って PR を出すまでの流れを説明できる</span></label></li>
+<li><label><input type="checkbox" data-id="s5-2"><span class="t">レビューで指摘を受けたときの直し方を説明できる</span></label></li>
+<li><label><input type="checkbox" data-id="s5-3"><span class="t">マージ方式（merge・squash・rebase）の違いを説明できる</span></label></li>
+<li><label><input type="checkbox" data-id="s5-4"><span class="t">保護ブランチの目的を説明できる</span></label></li>
+<li><label><input type="checkbox" data-id="s5-5"><span class="t">間違えたコミットを revert で戻す方法を説明できる</span></label><span class="ref"><a href="https://git-scm.com/docs/git-revert" target="_blank" rel="noopener">git revert</a></span></li>
+<li><label><input type="checkbox" data-id="s5-6"><span class="t">タグとリリースの付け方を説明できる</span></label><span class="ref"><a href="https://git-scm.com/book/ja/v2/Gitの基本-タグ" target="_blank" rel="noopener">2.6</a></span></li></ul></section>
+<footer>根拠：Pro Git（git-scm.com/book）。 チェックはこのブラウザに保存されます。</footer>
+</main>
+<script>
+(function(){
+var KEY="sample-git-basics-roadmap-v1",N=5,st={};
+try{st=JSON.parse(localStorage.getItem(KEY)||"{}")||{}}catch(e){st={}}
+var boxes=[].slice.call(document.querySelectorAll('input[type=checkbox][data-id]'));
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}}
+function render(){
+ var all=0,on=0;
+ for(var n=1;n<=N;n++){
+  var bs=boxes.filter(function(b){return b.dataset.id.indexOf("s"+n+"-")===0});
+  var c=bs.filter(function(b){return b.checked}).length;all+=bs.length;on+=c;
+  document.querySelector('[data-cnt="'+n+'"]').textContent=c+"/"+bs.length;
+  document.querySelector('[data-pc="'+n+'"]').textContent=c+"/"+bs.length;
+  document.querySelector('[data-bar="'+n+'"]').setAttribute("width",(bs.length?78*c/bs.length:0).toFixed(1));
+  document.querySelector('[data-node="'+n+'"]').classList.toggle("done",bs.length>0&&c===bs.length);
+ }
+ document.getElementById("oc").textContent=on+"/"+all;
+ document.getElementById("ob").style.width=(all?100*on/all:0)+"%";
+}
+boxes.forEach(function(b){b.checked=!!st[b.dataset.id];b.addEventListener("change",function(){if(b.checked)st[b.dataset.id]=1;else delete st[b.dataset.id];save();render()})});
+document.getElementById("reset").addEventListener("click",function(){if(confirm("チェックをすべて外します。よろしいですか？")){st={};boxes.forEach(function(b){b.checked=false});save();render()}});
+render();
+})();
+</script></body></html>
