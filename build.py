@@ -94,8 +94,14 @@ def build(d):
                 (" " + e(l["note"])) if l.get("note") else "") for l in links) + '</p>' if links else ""
         lis = "\n".join('<li><label><input type="checkbox" data-id="s%d-%d"><span class="t">%s</span></label>%s</li>'
                         % (n, j, e(it["text"]), refs_html(it.get("refs"))) for j, it in enumerate(s["items"], 1))
-        sec.append('<section id="s%d"><h2><span class="no">%d</span>%s<span class="sub">%s</span><span class="cnt" data-cnt="%d">0/%d</span></h2>%s<ul>%s</ul></section>'
-                   % (n, n, e(s["title"]), e(s.get("sub", "")), n, len(s["items"]), lk, lis))
+        questions = s.get("mindmap_questions")
+        mindmap = ""
+        if questions:
+            question_items = "\n".join('<li>%s</li>' % e(q) for q in questions)
+            mindmap = ('<div class="mindmap"><h3>このステップのマインドマップ</h3>'
+                       '<ul>%s</ul></div>' % question_items)
+        sec.append('<section id="s%d"><h2><span class="no">%d</span>%s<span class="sub">%s</span><span class="cnt" data-cnt="%d">0/%d</span></h2>%s<ul>%s</ul>%s</section>'
+                   % (n, n, e(s["title"]), e(s.get("sub", "")), n, len(s["items"]), lk, lis, mindmap))
     total = sum(len(s["items"]) for s in steps)
     key = d.get("storage_key") or ("learning-roadmap-" + d["title"])
     return (TEMPLATE.replace("@@TITLE@@", e(d["title"])).replace("@@TOTAL@@", str(total))
@@ -134,6 +140,10 @@ li{padding:5px 0;border-bottom:1px dotted #eef0f3;font-size:14px}
 li label{cursor:pointer;display:inline}
 li input{margin:0 8px 0 0;vertical-align:-2px;width:15px;height:15px;cursor:pointer}
 li input:checked+.t{color:#9ca3af;text-decoration:line-through}
+.mindmap{margin-top:12px}
+.mindmap h3{font-size:14px;margin:0 0 4px}
+.mindmap ul{list-style:disc;padding-left:1.5em;color:#4b5563}
+.mindmap li{padding:2px 0;border:0}
 .ref{margin-left:8px;font-size:11.5px;color:#6b7280}.ref a,.ref code{white-space:nowrap}
 .ref a{color:#2563eb;text-decoration:none}.ref a:hover{text-decoration:underline}
 .ref code{font-size:11px;background:#f3f4f6;padding:0 3px;border-radius:3px}
