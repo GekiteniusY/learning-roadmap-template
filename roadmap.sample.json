@@ -12,7 +12,13 @@
     {"text": "分散型と集中型の違いを説明できる", "refs": [{"label": "1.1", "url": "https://git-scm.com/book/ja/v2/使い始める-バージョン管理に関して"}]},
     {"text": "git config で名前とメールを設定する理由を説明できる", "refs": [{"label": "1.6", "url": "https://git-scm.com/book/ja/v2/使い始める-最初のGitの構成"}]},
     {"text": "ヘルプの引き方（git help）が分かる", "refs": [{"label": "git help", "url": "https://git-scm.com/docs/git-help"}]},
-    {"text": "このロードマップの残りのステップが何を扱うか説明できる", "refs": []}
+    {"text": "このロードマップの残りのステップが何を扱うか説明できる", "refs": []},
+    {"text": "このステップのマインドマップを自分の手で作った"}
+   ],
+   "mindmap_questions": [
+    "ファイルを編集してから履歴に残すまで、変更はどこを通る？",
+    "過去の状態を見返すとき、Git の履歴から何が分かる？",
+    "ネットにつながらないとき、分散型と集中型では何ができる？"
    ]},
   {"id": 2, "title": "基本の記録", "sub": "add・commit・log", "node_sub": "add / commit", "after": [1],
    "items": [
@@ -21,7 +27,13 @@
     {"text": "良いコミットメッセージの書き方を説明できる", "refs": []},
     {"text": "git log で履歴を絞り込める（--oneline・-p）", "refs": [{"label": "git log", "url": "https://git-scm.com/docs/git-log"}]},
     {"text": ".gitignore の書き方を説明できる", "refs": [{"label": "gitignore", "url": "https://git-scm.com/docs/gitignore"}]},
-    {"text": "直前のコミットを直す方法（--amend）と注意点を説明できる", "refs": []}
+    {"text": "直前のコミットを直す方法（--amend）と注意点を説明できる", "refs": []},
+    {"text": "このステップのマインドマップを自分の手で作った"}
+   ],
+   "mindmap_questions": [
+    "変更したファイルのうち、次のコミットに入るものはどう確かめる？",
+    "いくつかの変更を別々のコミットに分けるなら、何を基準にする？",
+    "過去の変更を探すとき、git log で何を手がかりにする？"
    ]},
   {"id": 3, "title": "ブランチ", "sub": "分岐とマージ", "node_sub": "branch / merge", "after": [2],
    "items": [
@@ -30,7 +42,13 @@
     {"text": "コンフリクトを解消する手順を説明できる", "refs": []},
     {"text": "rebase と merge の使い分けを説明できる", "refs": [{"label": "3.6", "url": "https://git-scm.com/book/ja/v2/Git-のブランチ機能-リベース"}]},
     {"text": "HEAD が何を指すか説明できる", "refs": []},
-    {"text": "switch / restore の役割を説明できる", "refs": [{"label": "git switch", "url": "https://git-scm.com/docs/git-switch"}]}
+    {"text": "switch / restore の役割を説明できる", "refs": [{"label": "git switch", "url": "https://git-scm.com/docs/git-switch"}]},
+    {"text": "このステップのマインドマップを自分の手で作った"}
+   ],
+   "mindmap_questions": [
+    "ブランチを切り替えると、HEAD と作業ツリーはどう変わる？",
+    "分かれた履歴を合流させるとき、マージの結果は何で変わる？",
+    "同じ箇所を別々のブランチで編集したら、どう確かめて解消する？"
    ]},
   {"id": 4, "title": "リモート", "sub": "push・pull・fetch", "node_sub": "remote", "after": [2],
    "items": [
@@ -39,7 +57,13 @@
     {"text": "push が拒否される理由と対処を説明できる", "refs": []},
     {"text": "force push の危険と --force-with-lease を説明できる", "refs": [{"label": "git push", "url": "https://git-scm.com/docs/git-push"}]},
     {"text": "clone で何がコピーされるか説明できる", "refs": []},
-    {"text": "上流ブランチ（upstream）の設定方法が分かる", "refs": []}
+    {"text": "上流ブランチ（upstream）の設定方法が分かる", "refs": []},
+    {"text": "このステップのマインドマップを自分の手で作った"}
+   ],
+   "mindmap_questions": [
+    "リモートと手元には、どんなブランチがある？",
+    "fetch と pull を使ったとき、手元のどの状態が変わる？",
+    "他の人が先に push していたら、履歴のどこを確かめる？"
    ]},
   {"id": 5, "title": "チーム開発", "sub": "Pull Request の流れ", "node_sub": "PR / review", "after": [3, 4],
    "items": [
@@ -48,7 +72,13 @@
     {"text": "マージ方式（merge・squash・rebase）の違いを説明できる", "refs": []},
     {"text": "保護ブランチの目的を説明できる", "refs": []},
     {"text": "間違えたコミットを revert で戻す方法を説明できる", "refs": [{"label": "git revert", "url": "https://git-scm.com/docs/git-revert"}]},
-    {"text": "タグとリリースの付け方を説明できる", "refs": [{"label": "2.6", "url": "https://git-scm.com/book/ja/v2/Gitの基本-タグ"}]}
+    {"text": "タグとリリースの付け方を説明できる", "refs": [{"label": "2.6", "url": "https://git-scm.com/book/ja/v2/Gitの基本-タグ"}]},
+    {"text": "このステップのマインドマップを自分の手で作った"}
+   ],
+   "mindmap_questions": [
+    "Pull Request で変更の意図を伝えるには、何を共有する？",
+    "レビューを受けて修正したあと、何を確かめてからマージする？",
+    "マージ後に問題が見つかったら、どんな手順で変更を戻す？"
    ]}
  ]
 }

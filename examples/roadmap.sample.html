@@ -29,6 +29,10 @@ li{padding:5px 0;border-bottom:1px dotted #eef0f3;font-size:14px}
 li label{cursor:pointer;display:inline}
 li input{margin:0 8px 0 0;vertical-align:-2px;width:15px;height:15px;cursor:pointer}
 li input:checked+.t{color:#9ca3af;text-decoration:line-through}
+.mindmap{margin-top:12px}
+.mindmap h3{font-size:14px;margin:0 0 4px}
+.mindmap ul{list-style:disc;padding-left:1.5em;color:#4b5563}
+.mindmap li{padding:2px 0;border:0}
 .ref{margin-left:8px;font-size:11.5px;color:#6b7280}.ref a,.ref code{white-space:nowrap}
 .ref a{color:#2563eb;text-decoration:none}.ref a:hover{text-decoration:underline}
 .ref code{font-size:11px;background:#f3f4f6;padding:0 3px;border-radius:3px}
@@ -36,7 +40,7 @@ a{color:#2563eb}
 footer{margin-top:30px;font-size:11.5px;color:#9ca3af}
 </style></head><body><main>
 <h1>Git 入門 学習ロードマップ（サンプル）</h1>
-<div class="overall"><span>全体</span><div class="bar"><i id="ob"></i></div><span id="oc">0/30</span><button id="reset" type="button">リセット</button></div>
+<div class="overall"><span>全体</span><div class="bar"><i id="ob"></i></div><span id="oc">0/35</span><button id="reset" type="button">リセット</button></div>
 <svg viewBox="0 0 638 194" role="img" aria-label="5ステップのロードマップ"><defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8a94a6"/></marker></defs><path d="M138 97 C153 97 153 97 168 97" class="edge" marker-end="url(#ar)"/>
 <path d="M302 97 C317 97 317 47 332 47" class="edge" marker-end="url(#ar)"/>
 <path d="M302 97 C317 97 317 147 332 147" class="edge" marker-end="url(#ar)"/>
@@ -49,36 +53,51 @@ footer{margin-top:30px;font-size:11.5px;color:#9ca3af}
 <a href="#s3" class="node" data-node="3"><rect x="336" y="8" width="130" height="78" rx="8"/><text x="346" y="25" class="nno">Step 3</text><text x="346" y="45" class="nt">ブランチ</text><text x="346" y="61" class="ns">branch / merge</text><rect x="346" y="71" width="78" height="5" rx="2.5" class="pbg"/><rect x="346" y="71" width="0" height="5" rx="2.5" class="pfg" data-bar="3"/><text x="456" y="76" class="npc" data-pc="3">0/0</text></a>
 <a href="#s4" class="node" data-node="4"><rect x="336" y="108" width="130" height="78" rx="8"/><text x="346" y="125" class="nno">Step 4</text><text x="346" y="145" class="nt">リモート</text><text x="346" y="161" class="ns">remote</text><rect x="346" y="171" width="78" height="5" rx="2.5" class="pbg"/><rect x="346" y="171" width="0" height="5" rx="2.5" class="pfg" data-bar="4"/><text x="456" y="176" class="npc" data-pc="4">0/0</text></a>
 <a href="#s5" class="node" data-node="5"><rect x="500" y="58" width="130" height="78" rx="8"/><text x="510" y="75" class="nno">Step 5</text><text x="510" y="95" class="nt">チーム開発</text><text x="510" y="111" class="ns">PR / review</text><rect x="510" y="121" width="78" height="5" rx="2.5" class="pbg"/><rect x="510" y="121" width="0" height="5" rx="2.5" class="pfg" data-bar="5"/><text x="620" y="126" class="npc" data-pc="5">0/0</text></a></svg>
-<section id="s1"><h2><span class="no">1</span>全体像<span class="sub">Git で何ができるか</span><span class="cnt" data-cnt="1">0/6</span></h2><p class="reqs"><span class="rq"><a href="https://git-scm.com/book/ja/v2/使い始める-Gitの基本" target="_blank" rel="noopener">Pro Git 1章</a></span></p><ul><li><label><input type="checkbox" data-id="s1-1"><span class="t">作業ツリー・ステージ・リポジトリの3つの場所の違いを説明できる</span></label><span class="ref"><a href="https://git-scm.com/book/ja/v2/使い始める-Gitの基本" target="_blank" rel="noopener">1.3 Gitの基本</a></span></li>
+<section id="s1"><h2><span class="no">1</span>全体像<span class="sub">Git で何ができるか</span><span class="cnt" data-cnt="1">0/7</span></h2><p class="reqs"><span class="rq"><a href="https://git-scm.com/book/ja/v2/使い始める-Gitの基本" target="_blank" rel="noopener">Pro Git 1章</a></span></p><ul><li><label><input type="checkbox" data-id="s1-1"><span class="t">作業ツリー・ステージ・リポジトリの3つの場所の違いを説明できる</span></label><span class="ref"><a href="https://git-scm.com/book/ja/v2/使い始める-Gitの基本" target="_blank" rel="noopener">1.3 Gitの基本</a></span></li>
 <li><label><input type="checkbox" data-id="s1-2"><span class="t">Git がスナップショットで履歴を持つことを説明できる</span></label><span class="ref"><a href="https://git-scm.com/book/ja/v2/使い始める-Gitの基本" target="_blank" rel="noopener">1.3</a></span></li>
 <li><label><input type="checkbox" data-id="s1-3"><span class="t">分散型と集中型の違いを説明できる</span></label><span class="ref"><a href="https://git-scm.com/book/ja/v2/使い始める-バージョン管理に関して" target="_blank" rel="noopener">1.1</a></span></li>
 <li><label><input type="checkbox" data-id="s1-4"><span class="t">git config で名前とメールを設定する理由を説明できる</span></label><span class="ref"><a href="https://git-scm.com/book/ja/v2/使い始める-最初のGitの構成" target="_blank" rel="noopener">1.6</a></span></li>
 <li><label><input type="checkbox" data-id="s1-5"><span class="t">ヘルプの引き方（git help）が分かる</span></label><span class="ref"><a href="https://git-scm.com/docs/git-help" target="_blank" rel="noopener">git help</a></span></li>
-<li><label><input type="checkbox" data-id="s1-6"><span class="t">このロードマップの残りのステップが何を扱うか説明できる</span></label></li></ul></section>
-<section id="s2"><h2><span class="no">2</span>基本の記録<span class="sub">add・commit・log</span><span class="cnt" data-cnt="2">0/6</span></h2><ul><li><label><input type="checkbox" data-id="s2-1"><span class="t">git status の出力の各欄を説明できる</span></label><span class="ref"><a href="https://git-scm.com/docs/git-status" target="_blank" rel="noopener">git status</a></span></li>
+<li><label><input type="checkbox" data-id="s1-6"><span class="t">このロードマップの残りのステップが何を扱うか説明できる</span></label></li>
+<li><label><input type="checkbox" data-id="s1-7"><span class="t">このステップのマインドマップを自分の手で作った</span></label></li></ul><div class="mindmap"><h3>このステップのマインドマップ</h3><ul><li>ファイルを編集してから履歴に残すまで、変更はどこを通る？</li>
+<li>過去の状態を見返すとき、Git の履歴から何が分かる？</li>
+<li>ネットにつながらないとき、分散型と集中型では何ができる？</li></ul></div></section>
+<section id="s2"><h2><span class="no">2</span>基本の記録<span class="sub">add・commit・log</span><span class="cnt" data-cnt="2">0/7</span></h2><ul><li><label><input type="checkbox" data-id="s2-1"><span class="t">git status の出力の各欄を説明できる</span></label><span class="ref"><a href="https://git-scm.com/docs/git-status" target="_blank" rel="noopener">git status</a></span></li>
 <li><label><input type="checkbox" data-id="s2-2"><span class="t">add と commit をなぜ分けるのか説明できる</span></label><span class="ref"><a href="https://git-scm.com/book/ja/v2/Gitの基本-変更内容のリポジトリへの記録" target="_blank" rel="noopener">2.2</a></span></li>
 <li><label><input type="checkbox" data-id="s2-3"><span class="t">良いコミットメッセージの書き方を説明できる</span></label></li>
 <li><label><input type="checkbox" data-id="s2-4"><span class="t">git log で履歴を絞り込める（--oneline・-p）</span></label><span class="ref"><a href="https://git-scm.com/docs/git-log" target="_blank" rel="noopener">git log</a></span></li>
 <li><label><input type="checkbox" data-id="s2-5"><span class="t">.gitignore の書き方を説明できる</span></label><span class="ref"><a href="https://git-scm.com/docs/gitignore" target="_blank" rel="noopener">gitignore</a></span></li>
-<li><label><input type="checkbox" data-id="s2-6"><span class="t">直前のコミットを直す方法（--amend）と注意点を説明できる</span></label></li></ul></section>
-<section id="s3"><h2><span class="no">3</span>ブランチ<span class="sub">分岐とマージ</span><span class="cnt" data-cnt="3">0/6</span></h2><ul><li><label><input type="checkbox" data-id="s3-1"><span class="t">ブランチがコミットへのポインタであることを説明できる</span></label><span class="ref"><a href="https://git-scm.com/book/ja/v2/Git-のブランチ機能-ブランチとは" target="_blank" rel="noopener">3.1</a></span></li>
+<li><label><input type="checkbox" data-id="s2-6"><span class="t">直前のコミットを直す方法（--amend）と注意点を説明できる</span></label></li>
+<li><label><input type="checkbox" data-id="s2-7"><span class="t">このステップのマインドマップを自分の手で作った</span></label></li></ul><div class="mindmap"><h3>このステップのマインドマップ</h3><ul><li>変更したファイルのうち、次のコミットに入るものはどう確かめる？</li>
+<li>いくつかの変更を別々のコミットに分けるなら、何を基準にする？</li>
+<li>過去の変更を探すとき、git log で何を手がかりにする？</li></ul></div></section>
+<section id="s3"><h2><span class="no">3</span>ブランチ<span class="sub">分岐とマージ</span><span class="cnt" data-cnt="3">0/7</span></h2><ul><li><label><input type="checkbox" data-id="s3-1"><span class="t">ブランチがコミットへのポインタであることを説明できる</span></label><span class="ref"><a href="https://git-scm.com/book/ja/v2/Git-のブランチ機能-ブランチとは" target="_blank" rel="noopener">3.1</a></span></li>
 <li><label><input type="checkbox" data-id="s3-2"><span class="t">fast-forward と 3-way マージの違いを説明できる</span></label></li>
 <li><label><input type="checkbox" data-id="s3-3"><span class="t">コンフリクトを解消する手順を説明できる</span></label></li>
 <li><label><input type="checkbox" data-id="s3-4"><span class="t">rebase と merge の使い分けを説明できる</span></label><span class="ref"><a href="https://git-scm.com/book/ja/v2/Git-のブランチ機能-リベース" target="_blank" rel="noopener">3.6</a></span></li>
 <li><label><input type="checkbox" data-id="s3-5"><span class="t">HEAD が何を指すか説明できる</span></label></li>
-<li><label><input type="checkbox" data-id="s3-6"><span class="t">switch / restore の役割を説明できる</span></label><span class="ref"><a href="https://git-scm.com/docs/git-switch" target="_blank" rel="noopener">git switch</a></span></li></ul></section>
-<section id="s4"><h2><span class="no">4</span>リモート<span class="sub">push・pull・fetch</span><span class="cnt" data-cnt="4">0/6</span></h2><ul><li><label><input type="checkbox" data-id="s4-1"><span class="t">origin とリモート追跡ブランチの関係を説明できる</span></label><span class="ref"><a href="https://git-scm.com/book/ja/v2/Git-のブランチ機能-リモートブランチ" target="_blank" rel="noopener">3.5</a></span></li>
+<li><label><input type="checkbox" data-id="s3-6"><span class="t">switch / restore の役割を説明できる</span></label><span class="ref"><a href="https://git-scm.com/docs/git-switch" target="_blank" rel="noopener">git switch</a></span></li>
+<li><label><input type="checkbox" data-id="s3-7"><span class="t">このステップのマインドマップを自分の手で作った</span></label></li></ul><div class="mindmap"><h3>このステップのマインドマップ</h3><ul><li>ブランチを切り替えると、HEAD と作業ツリーはどう変わる？</li>
+<li>分かれた履歴を合流させるとき、マージの結果は何で変わる？</li>
+<li>同じ箇所を別々のブランチで編集したら、どう確かめて解消する？</li></ul></div></section>
+<section id="s4"><h2><span class="no">4</span>リモート<span class="sub">push・pull・fetch</span><span class="cnt" data-cnt="4">0/7</span></h2><ul><li><label><input type="checkbox" data-id="s4-1"><span class="t">origin とリモート追跡ブランチの関係を説明できる</span></label><span class="ref"><a href="https://git-scm.com/book/ja/v2/Git-のブランチ機能-リモートブランチ" target="_blank" rel="noopener">3.5</a></span></li>
 <li><label><input type="checkbox" data-id="s4-2"><span class="t">fetch と pull の違いを説明できる</span></label></li>
 <li><label><input type="checkbox" data-id="s4-3"><span class="t">push が拒否される理由と対処を説明できる</span></label></li>
 <li><label><input type="checkbox" data-id="s4-4"><span class="t">force push の危険と --force-with-lease を説明できる</span></label><span class="ref"><a href="https://git-scm.com/docs/git-push" target="_blank" rel="noopener">git push</a></span></li>
 <li><label><input type="checkbox" data-id="s4-5"><span class="t">clone で何がコピーされるか説明できる</span></label></li>
-<li><label><input type="checkbox" data-id="s4-6"><span class="t">上流ブランチ（upstream）の設定方法が分かる</span></label></li></ul></section>
-<section id="s5"><h2><span class="no">5</span>チーム開発<span class="sub">Pull Request の流れ</span><span class="cnt" data-cnt="5">0/6</span></h2><ul><li><label><input type="checkbox" data-id="s5-1"><span class="t">ブランチを切って PR を出すまでの流れを説明できる</span></label></li>
+<li><label><input type="checkbox" data-id="s4-6"><span class="t">上流ブランチ（upstream）の設定方法が分かる</span></label></li>
+<li><label><input type="checkbox" data-id="s4-7"><span class="t">このステップのマインドマップを自分の手で作った</span></label></li></ul><div class="mindmap"><h3>このステップのマインドマップ</h3><ul><li>リモートと手元には、どんなブランチがある？</li>
+<li>fetch と pull を使ったとき、手元のどの状態が変わる？</li>
+<li>他の人が先に push していたら、履歴のどこを確かめる？</li></ul></div></section>
+<section id="s5"><h2><span class="no">5</span>チーム開発<span class="sub">Pull Request の流れ</span><span class="cnt" data-cnt="5">0/7</span></h2><ul><li><label><input type="checkbox" data-id="s5-1"><span class="t">ブランチを切って PR を出すまでの流れを説明できる</span></label></li>
 <li><label><input type="checkbox" data-id="s5-2"><span class="t">レビューで指摘を受けたときの直し方を説明できる</span></label></li>
 <li><label><input type="checkbox" data-id="s5-3"><span class="t">マージ方式（merge・squash・rebase）の違いを説明できる</span></label></li>
 <li><label><input type="checkbox" data-id="s5-4"><span class="t">保護ブランチの目的を説明できる</span></label></li>
 <li><label><input type="checkbox" data-id="s5-5"><span class="t">間違えたコミットを revert で戻す方法を説明できる</span></label><span class="ref"><a href="https://git-scm.com/docs/git-revert" target="_blank" rel="noopener">git revert</a></span></li>
-<li><label><input type="checkbox" data-id="s5-6"><span class="t">タグとリリースの付け方を説明できる</span></label><span class="ref"><a href="https://git-scm.com/book/ja/v2/Gitの基本-タグ" target="_blank" rel="noopener">2.6</a></span></li></ul></section>
+<li><label><input type="checkbox" data-id="s5-6"><span class="t">タグとリリースの付け方を説明できる</span></label><span class="ref"><a href="https://git-scm.com/book/ja/v2/Gitの基本-タグ" target="_blank" rel="noopener">2.6</a></span></li>
+<li><label><input type="checkbox" data-id="s5-7"><span class="t">このステップのマインドマップを自分の手で作った</span></label></li></ul><div class="mindmap"><h3>このステップのマインドマップ</h3><ul><li>Pull Request で変更の意図を伝えるには、何を共有する？</li>
+<li>レビューを受けて修正したあと、何を確かめてからマージする？</li>
+<li>マージ後に問題が見つかったら、どんな手順で変更を戻す？</li></ul></div></section>
 <footer>根拠：Pro Git（git-scm.com/book）。 チェックはこのブラウザに保存されます。</footer>
 </main>
 <script>
